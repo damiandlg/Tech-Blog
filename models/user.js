@@ -2,8 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our User model
-class User extends Model {}
-
+class User extends Model {
+    checkPassword(loginPW) {
+        return bycypt.compareSync(loginPW, this.password);
+    }
+}
 // define table columns and configuration
 User.init(
   {
@@ -36,7 +39,7 @@ User.init(
     }
 },
 
-  {
+{
     hooks: {
         async beforeCreate(newUserData) {
             newUserData.password = await bcrypt.hash(newUserData.password, 10);
@@ -48,7 +51,7 @@ User.init(
         }
     },
 
-    },
+    
 
     // pass in our imported sequelize connection (the direct connection to our database)
     sequelize,
