@@ -37,7 +37,7 @@ const Comment = sequelize.define('comment', {
     sequelize: sequelize,
     timestamps:true,
     freezeTableName: true,
-    modelName: 'comments',
+    modelName: "comments",
     underscored: true
 });
 

@@ -33,7 +33,7 @@ const Post = sequelize.define('post', {
     sequelize: sequelize,
     timestamps:true,
     freezeTableName: true,
-    modelName: 'posts',
+    modelName: "posts",
     underscored: true
 });
 

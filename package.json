@@ -5,7 +5,27 @@
     "dotenv": "^16.0.3",
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
+    "install": "^0.13.0",
     "mysql": "^2.18.1",
     "sequelize": "^6.25.5"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "my_mvc_blog",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Damiandlg"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damiandlg/Tech-Blog/issues"
+  },
+  "homepage": "https://github.com/damiandlg/Tech-Blog",
+  "keywords": []
 }
+
