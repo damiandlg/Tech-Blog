@@ -51,8 +51,13 @@ const comments = [
     },
 ]
 
-(async() => {
-    await User.bulkCreate(users);
+const dataDummy = async () => {
+
+
+    await User.bulkCreate(users, { individualHooks: true });
     await Post.bulkCreate(posts);
     await Comment.bulkCreate(comments);
-})();
+
+}
+
+dataDummy();

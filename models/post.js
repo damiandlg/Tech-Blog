@@ -1,27 +1,27 @@
-const { Model, DataTypes, Sequelize } = require('sequelize');
-const sequelize = require('../config/connection');
+const Sequelize = require('sequelize');
+const sequelizeConnection = require('../config/connection');
 
+const Post = sequelizeConnection.define('post', {
 
-const Post = sequelize.define('post', {
-    id:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
+    id: {
+        type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement:true
+        autoIncrement: true,
+        allowNull: false
     },
 
     title: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false
     },
 
     content: {
-        type: DataTypes.TEXT,
+        type: Sequelize.TEXT,
         allowNull: false
     },
 
     user_id: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         allowNull: false,
         reference: {
             model: 'User',
@@ -29,13 +29,12 @@ const Post = sequelize.define('post', {
         }
     }
 
-},{ 
-    sequelize: sequelize,
-    timestamps:true,
+}, {
+    sequelize: sequelizeConnection,
+    timestamps: true,
     freezeTableName: true,
-    modelName: "posts",
+    modelName: 'posts',
     underscored: true
 });
-
 
 module.exports = Post;
