@@ -8,12 +8,13 @@
     "express-session": "^1.17.3",
     "install": "^0.13.0",
     "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
     "sequelize": "^6.25.5"
   },
   "scripts": {
     "start": "node server.js"
   },
-  "name": "my_mvc_blog",
+  "name": "tech-blog",
   "description": "",
   "version": "1.0.0",
   "main": "server.js",
