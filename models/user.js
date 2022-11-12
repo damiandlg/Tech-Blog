@@ -36,8 +36,8 @@ const User = sequelizeConnect.define('user', {
 });
 
 User.beforeCreate(async user => {
-    const userData = user.dataValues;
-    userData.password = await bcrypt.hash(userData.password, 10);
+    const dataUser = user.dataValues;
+    dataUser.password = await bcrypt.hash(dataUser.password, 10);
 });
 
 User.prototype.validatePassword = function (rawPassword) {
