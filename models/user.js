@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
-const sequelizeConnection = require('../config/connection');
+const sequelizeConnect = require('../config/connection');
 const bcrypt = require('bcrypt');
 
-const User = sequelizeConnection.define('user', {
+const User = sequelizeConnect.define('user', {
 
     id: {
         type: Sequelize.INTEGER,
@@ -28,7 +28,7 @@ const User = sequelizeConnection.define('user', {
     }
 
 }, {
-    sequelize: sequelizeConnection,
+    sequelize: sequelizeConnect,
     timestamps: false,
     freezeTableName: true,
     modelName: 'users',
@@ -46,19 +46,3 @@ User.prototype.validatePassword = function (rawPassword) {
 }
 
 module.exports = User;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
